@@ -268,24 +268,9 @@ html, body{
     
     
     }
-    .gif{
-        height: 50vh;
-    }
+    
    
 
-}
-
-.gif{
-    
-    height: 100vh;
-    width: 100%;
-    background-color: #272B31;
-    background-image: url("img/acaba.gif");
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    overflow: hidden;
 }
 
 footer{
