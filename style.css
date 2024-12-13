@@ -4,16 +4,19 @@
     box-sizing: border-box;
     
     
+    
 }
 
 html, body{
-
     height: 100%;
     width: 100%;
     font-family: monospace;
     background-color: #1F1C3C;
     cursor: url("imagens/foguete.png") 25 25, auto;
     display: grid;
+    margin: 0;
+    padding: 0;
+    
 }
 
 #container{
@@ -21,7 +24,7 @@ html, body{
     height: 100vh;
     overflow: hidden;
     background-image: linear-gradient(to bottom , #1F1C3C ,#2F677C,#811858 );
-    grid-area: 1/1/5/5;
+    
     
 }
 /* navgation na parte superio */
@@ -118,10 +121,6 @@ html, body{
 .ft{
     font-size: 2em;
 }
-.ft.ft1{
-
-    grid-area: 5/1/10/5;
-}
 /* classes ft estão configurasdas para aparecer quando o scroll se aproxima*/
 .ft.active {
     display: flex;
@@ -134,17 +133,18 @@ html, body{
     height: 100vh;
     
 }
-h1.ft.active{
-    grid-area: 10/1/15/5;
-}
 
 
-.ft.planetas{
+
+.planetas{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin-bottom: 50px;
     
-    grid-area: 15/1/20/5;
+   
+    
+    
     
 }
 
@@ -168,7 +168,7 @@ h1.ft.active{
     border-radius: 20px;
     font-size: 1em;
 
-    margin-top: 20px;
+    margin-top: 10px;
     
     
 
@@ -189,6 +189,8 @@ h1.ft.active{
 .planet P{
     visibility: hidden;
     margin-top: 80%;
+    font-size: 2em;
+    color: white;
 
     
 }
@@ -197,6 +199,15 @@ h1.ft.active{
 }
 
 @media screen and (max-width: 600px) {
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        
+        
+        
+    }
     #container h1{
 
         display: flex;
@@ -217,7 +228,7 @@ h1.ft.active{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        grid-area: 5/1/10/5;
+        
         text-align: center;
         align-self: flex-start;
     }
@@ -231,8 +242,10 @@ h1.ft.active{
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
+        height: 100vh;
+       
         
-        grid-area: 15/1/20/5;
+        
         
         
     }
@@ -255,10 +268,53 @@ h1.ft.active{
     
     
     }
+    .gif{
+        height: 50vh;
+    }
+   
 
 }
 
+.gif{
+    
+    height: 100vh;
+    width: 100%;
+    background-color: #272B31;
+    background-image: url("img/acaba.gif");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
 
+footer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #1F1C3C;
+    color: white;
+    
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+}
+footer h2{
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+footer a{
+    text-decoration: none;
+    color: white;
+}
+.estrelinha{
+
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
 
 
 

@@ -36,24 +36,27 @@ window.addEventListener("scroll",()=>{
 /* Cria as estrelas em lugares aleatorios*/
  window.onload = function stars(){
 
-    let todes = document.querySelector(".ft.ft1")
+    let todes = document.querySelectorAll(".estrelinha")
 
+        todes.forEach((item)=>{
+            for(let i = 0; i < 1000; i++){
+                let star = document.createElement("div")
+                star.className = "star";
+                star.style.width = ".3px"
+                star.style.height = ".3px"
+            
+                star.style.top = Math.random() * 100 + "%";
+                star.style.left = Math.random() * 100 + "%";
+    
+                item.appendChild(star)
+         
+                
+                
+                
+             }
+        })
 
-        for(let i = 0; i < 1000; i++){
-            let star = document.createElement("div")
-            star.className = "star";
-            star.style.width = ".3px"
-            star.style.height = ".3px"
         
-            star.style.top = Math.random() * 100 + "%";
-            star.style.left = Math.random() * 100 + "%";
-
-            todes.appendChild(star)
-     
-            
-            
-            
-         }
     
     
  }
