@@ -29,6 +29,22 @@ window.addEventListener("scroll",()=>{
          tab.style.transform = `translate(-100%,0)`
         
     }
+
+
+    let planeta = document.querySelectorAll(".planetas")
+
+    planeta.forEach((item)=>{
+
+        if(item.offsetTop - top < 550){
+
+            item.classList.add('achou')
+            
+        }else{
+            item.classList.remove('achou')
+        }
+    })
+
+  
 })
 
 })

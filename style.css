@@ -151,13 +151,20 @@ html, body{
     justify-content: space-around;
     flex-wrap: wrap;
     margin-bottom: 50px;
+    opacity: 0;
+    
+
     
    
     
     
     
 }
-
+.planetas.achou{
+    opacity: 1;
+    display: flex;
+    transition: 3s;
+}
 .star {
     position: absolute;
     background-color: white;
@@ -199,7 +206,7 @@ html, body{
 .planet P{
     visibility: hidden;
     margin-top: 80%;
-    font-size: 1em;
+    font-size: 2em;
     color: white;
 
     
