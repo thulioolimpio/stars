@@ -123,15 +123,25 @@ html, body{
 }
 /* classes ft estão configurasdas para aparecer quando o scroll se aproxima*/
 .ft.active {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
     transition: 3s;
-    opacity: 1;
-    color: white;
-    text-align: center;
-    height: 100vh;
     
+    
+}
+.ft.r1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    color: white;
+}
+.ft.ft1{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    text-align: center;
+    color: white;
 }
 
 
@@ -167,7 +177,7 @@ html, body{
     background-color: #2f677c2b;
     border-radius: 20px;
     font-size: 1em;
-
+    gap: 5px;
     margin-top: 10px;
     
     
@@ -189,7 +199,7 @@ html, body{
 .planet P{
     visibility: hidden;
     margin-top: 80%;
-    font-size: 2em;
+    font-size: 1em;
     color: white;
 
     
@@ -238,17 +248,7 @@ html, body{
     h2{
         font-size: .8em;
     }
-    .ft.planetas{
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        height: 100vh;
-       
-        
-        
-        
-        
-    }
+   
     .planet{
         position: relative;
         display: flex;
@@ -267,6 +267,14 @@ html, body{
         
     
     
+    }
+    .ft.estrelinha{
+
+        font-size: 1em;
+
+
+
+
     }
     
    
