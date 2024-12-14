@@ -150,7 +150,6 @@ html, body{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-bottom: 50px;
     opacity: 0;
     
 
@@ -184,7 +183,7 @@ html, body{
     background-color: #2f677c2b;
     border-radius: 20px;
     font-size: 1em;
-    gap: 5px;
+    
     margin-top: 10px;
     cursor: pointer;
     
