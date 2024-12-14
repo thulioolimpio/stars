@@ -92,6 +92,54 @@ let seta = document.querySelectorAll("#aba i")
     })
 
 
+/* passos para fazer uma imagem que muda top! */ 
 
+/* primeiro crie um addEventListener ("DOMContentLoad" e a funtion),  isso faz com que o script rode quando o html for bem executado!*/
 
+/* depois vamos pegar o "pai", o antes e o pontencial cursor!*/
 
+/* depois vamos criar uma function que atualiza a posição do cursor e a quantidade da imagem na tela*/
+
+/* pegue o rect , limite o mouse a sair do container em x e y Math.min(Math.max( x - rect.left), rect.width); */
+
+/* agora vamos calcular o quanto da imagem antes deve ser mostrada! o (x / rect.width) * 100 */
+
+/* depois mude o estilo do antes no js `inset(0 ${100 - percentageX}% 0 0) */
+
+/* depois posicione a bolinha exatamente no lugar do mouse `translate(${offsetX}px, ${offsetY}px)`; */
+
+/* depois crie uma fução que vai ser ativada quando o mouse entrar na div pai 
+
+    updateSlider(e.clientX, e.clientY);
+
+    e por fim mude a opacidade para 1 e crie outra função para quando ele sair e mude para 0! */
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const antesdepois = document.querySelector(".antesdepois");
+        const antes = document.querySelector(".antes");
+        const bola = document.querySelector(".bola");
+      
+        const updateSlider = (x, y) => {
+          const rect = antesdepois.getBoundingClientRect(); // Obtém o contêiner
+          const offsetX = Math.min(Math.max(0, x - rect.left), rect.width); // Calcula a posição no eixo X
+          const offsetY = Math.min(Math.max(0, y - rect.top), rect.height); // Calcula a posição no eixo Y
+      
+          const porcentagem = (offsetX / rect.width) * 100; // Calcula a porcentagem horizontal
+      
+          // Atualiza o clip-path da imagem "antes"
+          antes.style.clipPath = `inset(0 ${100 - porcentagem}% 0 0)`;
+      
+          // Move a bola para acompanhar o cursor
+          bola.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+        };
+      
+        antesdepois.addEventListener("mousemove", (e) => {
+          updateSlider(e.clientX, e.clientY);
+          bola.style.opacity = "1"; // Mostra a bola
+        });
+      
+        antesdepois.addEventListener("mouseleave", () => {
+          bola.style.opacity = "0"; // Esconde a bola
+        });
+      });
+      
