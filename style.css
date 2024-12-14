@@ -12,7 +12,6 @@ html, body{
     width: 100%;
     font-family: monospace;
     background-color: #1F1C3C;
-    cursor: url("imagens/foguete.png") 25 25, auto;
     display: grid;
     margin: 0;
     padding: 0;
@@ -186,7 +185,7 @@ html, body{
     font-size: 1em;
     gap: 5px;
     margin-top: 10px;
-    
+    cursor: pointer;
     
 
 
@@ -327,6 +326,10 @@ footer a{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    color: white;
+    font-size: 1.2em;
+    gap: 20px;
     height: 100vh;
     overflow: hidden;
 }
@@ -338,7 +341,7 @@ footer a{
     overflow: hidden;
     border: 1px solid white;
     border-radius: 10px;
-    cursor: none;
+    cursor: url("imagens/foguete.png") 25 25, auto;
 }
 
 .antesdepois figure{
@@ -363,17 +366,6 @@ footer a{
 .depois{
     z-index: 1;
 }
-
-.bola {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: #333;
-    border: 2px solid white;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 10;
-    opacity: 0; /* Começa invisível */
-    transition: opacity 0.2s ease; /* Animação suave ao aparecer/desaparecer */
-  }
+.direitinha.cont{
+    transition: 3s;
+}

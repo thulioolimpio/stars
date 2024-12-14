@@ -130,16 +130,33 @@ let seta = document.querySelectorAll("#aba i")
           antes.style.clipPath = `inset(0 ${100 - porcentagem}% 0 0)`;
       
           // Move a bola para acompanhar o cursor
-          bola.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+          
+          
         };
       
         antesdepois.addEventListener("mousemove", (e) => {
           updateSlider(e.clientX, e.clientY);
-          bola.style.opacity = "1"; // Mostra a bola
+          
         });
       
         antesdepois.addEventListener("mouseleave", () => {
-          bola.style.opacity = "0"; // Esconde a bola
+          
         });
       });
       
+document.addEventListener("scroll",()=>{
+
+        let altura = window.scrollY
+        let anta = document.querySelector(".cont")
+
+        let direitinha = document.querySelector(".direitinha")
+
+        if(anta.offsetTop - altura < innerHeight){
+
+            direitinha.style.transform = `translate(0,0)`
+        }else{
+            direitinha.style.transform = `translate(100%,0)`
+        }
+
+        
+})    
