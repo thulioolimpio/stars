@@ -126,7 +126,7 @@ html, body{
 }
 /* classes ft estão configurasdas para aparecer quando o scroll se aproxima*/
 .ft.active {
-    transition: 5s;
+    transition: 3s;
     
     
     
@@ -139,6 +139,13 @@ html, body{
     width: 100%;
     text-align: center;
     color: white;
+}
+.papito{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .ft1{
     display: flex;
@@ -250,6 +257,9 @@ html, body{
         
     }
     .ft1{
+
+        height: 50%;
+        width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: center;
