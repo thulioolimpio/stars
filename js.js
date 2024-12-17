@@ -55,7 +55,7 @@ window.addEventListener("scroll",()=>{
     let todes = document.querySelectorAll(".estrelinha")
 
         todes.forEach((item)=>{
-            for(let i = 0; i < 1000; i++){
+            for(let i = 0; i < 500; i++){
                 let star = document.createElement("div")
                 star.className = "star";
                 star.style.width = ".3px"
@@ -118,32 +118,30 @@ let seta = document.querySelectorAll("#aba i")
         const antesdepois = document.querySelector(".antesdepois");
         const antes = document.querySelector(".antes");
         const bola = document.querySelector(".bola");
-      
+    
         const updateSlider = (x, y) => {
-          const rect = antesdepois.getBoundingClientRect(); // Obtém o contêiner
-          const offsetX = Math.min(Math.max(0, x - rect.left), rect.width); // Calcula a posição no eixo X
-          const offsetY = Math.min(Math.max(0, y - rect.top), rect.height); // Calcula a posição no eixo Y
-      
-          const porcentagem = (offsetX / rect.width) * 100; // Calcula a porcentagem horizontal
-      
-          // Atualiza o clip-path da imagem "antes"
-          antes.style.clipPath = `inset(0 ${100 - porcentagem}% 0 0)`;
-      
-          // Move a bola para acompanhar o cursor
-          
-          
+            const rect = antesdepois.getBoundingClientRect(); // Obtém o contêiner
+            const offsetX = Math.min(Math.max(0, x - rect.left), rect.width); // Limita o movimento
+            const offsetY = Math.min(Math.max(0, y - rect.top), rect.height); // Limita o movimento
+    
+            const porcentagem = (offsetX / rect.width) * 100; // Calcula a porcentagem horizontal
+    
+            // Atualiza o clip-path da imagem "antes"
+            antes.style.clipPath = `inset(0 ${100 - porcentagem}% 0 0)`;
+    
+            // Move a bola para acompanhar o cursor
+            bola.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
         };
-      
+    
         antesdepois.addEventListener("mousemove", (e) => {
-          updateSlider(e.clientX, e.clientY);
-          
+            updateSlider(e.clientX, e.clientY);
         });
-      
+    
         antesdepois.addEventListener("mouseleave", () => {
-          
+            bola.style.opacity = 0; // Quando o mouse sair, ocultar a bolinha
         });
-      });
-      
+    });
+    
 document.addEventListener("scroll",()=>{
 
         let altura = window.scrollY
